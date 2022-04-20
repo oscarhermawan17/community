@@ -1,0 +1,2 @@
+run db migrate: npx sequelize db:migrate
+run seed: npx sequelize-cli db:seed:all
