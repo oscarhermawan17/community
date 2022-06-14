@@ -7,9 +7,9 @@ interface PropsConfig {
   onClick: () => void;
 }
 
-function Button({ children }: PropsConfig): ReactElement {
+function Button({ children, onClick }: PropsConfig): ReactElement {
   return (
-    <button className={styles.wrapperButton}>
+    <button className={styles.wrapperButton} onClick={onClick}>
       {children}
     </button>
   );

@@ -1,19 +1,24 @@
 import { useState, ReactElement } from 'react';
+import { useDispatch } from 'react-redux'
+import type { AppDispatch } from '../../app/store';
 
 import Form from '../../components/Form';
 import Button from '../../components/Button';
 import styles from './LoginPage.module.scss';
 
 function LoginPage(): ReactElement {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch<AppDispatch>();
+  
   return (
     <>
       <div className={styles.wrapperLoginPage}>
         <div className={styles.wrapperBox}>
           <div className={styles.formBox}>
-            <span>username</span>
-            <Form value={username} type={'text'} onChange={(value) => setUsername(value)} />
+            <span>email</span>
+            <Form value={email} type={'text'} onChange={(value) => setEmail(value)} />
           </div>
           <div className={styles.formBox}>
             <span>password</span>
